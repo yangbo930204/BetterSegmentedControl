@@ -13,7 +13,7 @@ public extension BetterSegmentedControl {
      class func appleStyled(frame: CGRect, titles: [NSAttributedString]) -> BetterSegmentedControl {
         let control = BetterSegmentedControl(
             frame: frame,
-            segments: LabelSegment.segments(withTitles: titles),
+            segments: LabelSegment.segments(withNormalTitles: titles, withSelectedTitles: titles),
             options: [.cornerRadius(8)])
         control.indicatorView.layer.shadowColor = UIColor.black.cgColor
         control.indicatorView.layer.shadowOpacity = 0.1
