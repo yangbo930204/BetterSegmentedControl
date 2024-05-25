@@ -10,7 +10,7 @@
 import UIKit
 
 public extension BetterSegmentedControl {
-     class func appleStyled(frame: CGRect, titles: [String]) -> BetterSegmentedControl {
+     class func appleStyled(frame: CGRect, titles: [NSAttributedString]) -> BetterSegmentedControl {
         let control = BetterSegmentedControl(
             frame: frame,
             segments: LabelSegment.segments(withTitles: titles),

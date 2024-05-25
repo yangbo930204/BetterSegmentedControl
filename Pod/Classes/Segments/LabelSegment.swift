@@ -21,7 +21,7 @@ open class LabelSegment: BetterSegmentedControlSegment {
     }
     
     // MARK: Properties
-    public let text: String?
+    public let text: NSAttributedString?
     
     public let normalFont: UIFont
     public let normalTextColor: UIColor
@@ -35,7 +35,7 @@ open class LabelSegment: BetterSegmentedControlSegment {
     private let accessibilityIdentifier: String?
     
     // MARK: Lifecycle
-    public init(text: String? = nil,
+    public init(text: NSAttributedString? = nil,
                 numberOfLines: Int = 1,
                 normalBackgroundColor: UIColor? = nil,
                 normalFont: UIFont? = nil,
@@ -74,13 +74,13 @@ open class LabelSegment: BetterSegmentedControlSegment {
                     textColor: selectedTextColor,
                     accessibilityIdentifier: accessibilityIdentifier)
     }()
-    open func createLabel(withText text: String?,
+    open func createLabel(withText text: NSAttributedString?,
                           backgroundColor: UIColor,
                           font: UIFont,
                           textColor: UIColor,
                           accessibilityIdentifier: String?) -> UILabel {
         let label = UILabel()
-        label.text = text
+        label.attributedText = text
         label.numberOfLines = numberOfLines
         label.backgroundColor = backgroundColor
         label.font = font
@@ -93,7 +93,7 @@ open class LabelSegment: BetterSegmentedControlSegment {
 }
 
 public extension LabelSegment {
-    class func segments(withTitles titles: [String],
+    class func segments(withTitles titles: [NSAttributedString],
                         numberOfLines: Int = 1,
                         normalBackgroundColor: UIColor? = nil,
                         normalFont: UIFont? = nil,

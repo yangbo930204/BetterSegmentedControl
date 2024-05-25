@@ -467,7 +467,7 @@ import UIKit
     }
     
     private static func generateDefaultSegments() -> [LabelSegment] {
-        [.init(text: "First"), .init(text: "Second"), .init(text: "Third")]
+        [.init(text: NSAttributedString(string: "First")), .init(text: NSAttributedString(string: "Second")), .init(text: NSAttributedString(string: "Third"))]
     }
     
     // MARK: Action handlers
