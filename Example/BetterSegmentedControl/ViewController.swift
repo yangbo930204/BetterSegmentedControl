@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         let twitterSelected = createAttributedString(withText: "twitter", withImageString: "selected_coin")
 
         let navigationSegmentedControl = BetterSegmentedControl(
-            frame: CGRect(x: 0, y: 0, width: 200.0, height: 30.0),
+            frame: CGRect(x: 0, y: 0, width: 300.0, height: 30.0),
             segments: LabelSegment.segments(withNormalTitles: [facebook, twitter],
                                             withSelectedTitles: [facebookSelected, twitterSelected],
                                             normalTextColor: .lightGray,
@@ -60,6 +60,9 @@ class ViewController: UIViewController {
         navigationSegmentedControl.addTarget(self,
                                              action: #selector(ViewController.navigationSegmentedControlValueChanged(_:)),
                                              for: .valueChanged)
+
+        navigationSegmentedControl.firstItemAddWidth = 20
+
         navigationItem.titleView = navigationSegmentedControl
 
         // Control 1: Created and designed in IB

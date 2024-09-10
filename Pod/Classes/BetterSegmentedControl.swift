@@ -453,8 +453,16 @@
             }
         }
 
+        public var firstItemAddWidth: CGFloat = 0
+
         private func frameForElement(atIndex index: Int) -> CGRect {
-            let elementWidth = (width - totalInsetSize) / CGFloat(normalSegmentViewCount)
+//            let elementWidth = (width - totalInsetSize) / CGFloat(normalSegmentViewCount)
+            var elementWidth = (width - totalInsetSize) / CGFloat(normalSegmentViewCount)
+
+            if index == 0, firstItemAddWidth > 0 {
+                elementWidth += firstItemAddWidth
+            }
+
             let x = CGFloat(isLayoutDirectionRightToLeft ? lastIndex - index : index) * elementWidth
 
             return CGRect(x: x + indicatorViewInset,
